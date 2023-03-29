@@ -4,7 +4,6 @@ import React, {
 } from "react";
 import "./style/main.css";
 import { GiShoppingBag } from "react-icons/gi";
-import RatingStars from "./components/RatingStars";
 import ShoppingCart from "./components/ShoppingCart";
 
 const products = [
@@ -81,6 +80,7 @@ function App() {
 			JSON.stringify(productsInCart)
 		);
 	}, [productsInCart]);
+
 	const addProductToCart = (product) => {
 		const newProduct = {
 			...product,
@@ -176,11 +176,6 @@ function App() {
 							<h4 className="product-name">
 								{product.name}
 							</h4>
-							<RatingStars
-								rating={
-									product.rating
-								}
-							/>
 							<p>
 								{
 									product.description
